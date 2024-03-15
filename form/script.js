@@ -43,6 +43,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('myForm');
   const usernameInput = document.getElementById('username');
   const emailInput = document.getElementById('email');
   const messageInput = document.getElementById('message');
@@ -56,7 +57,18 @@ document.addEventListener('DOMContentLoaded', function() {
       charCountElement.textContent = this.value.length;
     });
   }
+
+  function clearCharCount(charCountElement) {
+    charCountElement.textContent = '0';
+  }
+
   updateCharCount(usernameInput, charCountUsername);
   updateCharCount(emailInput, charCountEmail);
   updateCharCount(messageInput, charCountMessage);
+
+  form.addEventListener('reset', function() {
+    clearCharCount(charCountUsername);
+    clearCharCount(charCountEmail);
+    clearCharCount(charCountMessage);
+  });
 });
