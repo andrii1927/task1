@@ -17,7 +17,7 @@ agree
 
 
 document.getElementById('myForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the form from submitting
+  event.preventDefault();
 
  
   const username = document.getElementById('username').value.trim();
